@@ -1,0 +1,12 @@
+
+
+This archive contains the distribution Log-Dispatch-Gtk2-Notify, version
+0.01:
+
+  send log messages to a desktop notification daemon
+
+This software is copyright (c) 2009 by Florian Ragwitz.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as perl itself.
+

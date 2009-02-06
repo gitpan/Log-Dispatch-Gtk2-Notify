@@ -1,0 +1,11 @@
+Changes
+Debian_CPANTS.txt
+LICENSE
+MANIFEST
+META.yml
+Makefile.PL
+README
+examples/basic.pl
+lib/Log/Dispatch/Gtk2/Notify.pm
+lib/Log/Dispatch/Gtk2/Notify/Types.pm
+t/basic.t

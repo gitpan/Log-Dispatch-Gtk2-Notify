@@ -1,0 +1,17 @@
+--- 
+abstract: send log messages to a desktop notification daemon
+author: 
+  - Florian Ragwitz <rafl@debian.org>
+generated_by: Dist::Zilla::Plugin::MetaYaml version 1.003
+license: perl
+name: Log-Dispatch-Gtk2-Notify
+requires: 
+  File::Basename: 0
+  Gtk2: 0
+  Gtk2::Notify: 0
+  Log::Dispatch: 0
+  Moose: 0
+  MooseX::Types: 0
+  MooseX::Types::Moose: 0
+  namespace::clean: 0
+version: 0.01
