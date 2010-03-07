@@ -1,6 +1,5 @@
 package Log::Dispatch::Gtk2::Notify;
-our $VERSION = '0.01';
-
+our $VERSION = '0.02';
 # ABSTRACT: send log messages to a desktop notification daemon
 
 
@@ -45,20 +44,24 @@ has icon_map => (
 );
 
 has name => (
+    is       => 'bare',
     isa      => Str,
     required => 1,
 );
 
 has min_level => (
+    is       => 'bare',
     isa      => LogLevel,
     required => 1,
 );
 
 has max_level => (
+    is  => 'bare',
     isa => LogLevel,
 );
 
 has callbacks => (
+    is  => 'bare',
     isa => (ArrayRef[CodeRef]) | CodeRef,
 );
 
@@ -124,13 +127,12 @@ sub _build_icon_map {
     };
 }
 
-__PACKAGE__->meta->make_immutable;
+__PACKAGE__->meta->make_immutable(inline_constructor => 0);
 
 
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -139,46 +141,43 @@ Log::Dispatch::Gtk2::Notify - send log messages to a desktop notification daemon
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
-      use Log::Dispatch::Gtk2::Notify;
+    use Log::Dispatch::Gtk2::Notify;
 
-      my $notify = Log::Dispatch::Gtk2::Notify->new(
-          name      => 'notify',
-          min_level => 'debug',
-          app_name  => 'MyApp',
-          title     => 'Important Message',
-      );
+    my $notify = Log::Dispatch::Gtk2::Notify->new(
+        name      => 'notify',
+        min_level => 'debug',
+        app_name  => 'MyApp',
+        title     => 'Important Message',
+    );
 
-      $notify->log(level => 'alert', message => 'Hello, World!');
+    $notify->log(level => 'alert', message => 'Hello, World!');
 
 =head1 DESCRIPTION
 
 This modules allows you to send log messages to the desktop notification
 daemon.
 
-=pod 
+=cut
 
-=begin Pod::Coverage
+=pod
 
-BUILD
+=for Pod::Coverage BUILD
 log_message
-
-=end Pod::Coverage
 
 =head1 AUTHOR
 
-  Florian Ragwitz <rafl@debian.org>
+Florian Ragwitz <rafl@debian.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2009 by Florian Ragwitz.
+This software is copyright (c) 2010 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
+the same terms as the Perl 5 programming language system itself.
 
-=cut 
-
+=cut
 
